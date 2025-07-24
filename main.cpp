@@ -874,14 +874,11 @@ bool IsCollsion(const Triangle& triangle, const Segment& segment)
 #pragma region AABBとAABB
 bool IsCollsion(const AABB& aabb1,const AABB& aabb2)
 {
-	if ((aabb1.min.x <= aabb2.max.x && aabb1.max.x >= aabb2.min.x) &&//x軸
+	return (aabb1.min.x <= aabb2.max.x && aabb1.max.x >= aabb2.min.x) &&//x軸
 		(aabb1.min.y <= aabb2.max.y && aabb1.max.y >= aabb2.min.y) &&//y軸
-		(aabb1.min.z <= aabb2.max.z && aabb1.max.z >= aabb2.min.z))//z軸
+		(aabb1.min.z <= aabb2.max.z && aabb1.max.z >= aabb2.min.z);//z軸
 		//衝突]
-	{
-		return true;
-	}
-	return false;
+	
 }
 #pragma endregion
 
@@ -1053,10 +1050,12 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		if (isHit)
 		{
 			aabb1.color = RED;
+			aabb2.color = RED;
 		}
 		else
 		{
 			aabb1.color = WHITE;
+			aabb2.color = WHITE;
 		}
 
 		///
