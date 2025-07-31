@@ -991,12 +991,12 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		//ImGui::DragFloat3("Triangle.v2 ", &triangle.vertices[2].x, 0.1f);
 		
 		ImGui::Text("AABB1");
-		ImGui::DragFloat3( "aabb1.min", &aabb1.min.x,0.1f);
-		ImGui::DragFloat3("aabb1.max", &aabb1.max.x,0.1f);
-
+		ImGui::SliderFloat3( "aabb1.min", &aabb1.min.x,-0.1f,-3.0f,"%.001f");
+		ImGui::SliderFloat3("aabb1.max", &aabb1.max.x, 0.1f, 3.0f, "%.001f");
+		
 		ImGui::Text("AABB2");
-		ImGui::DragFloat3("aabb2.min", &aabb2.min.x,0.1f);
-		ImGui::DragFloat3("aabb2.max", &aabb2.max.x,0.1f);
+		ImGui::SliderFloat3("aabb2.min", &aabb2.min.x, -0.1f, -3.0f, "%.001f");
+		ImGui::SliderFloat3("aabb2.max", &aabb2.max.x, 0.1f, 3.0f, "%.001f");
 
 		ImGui::Text("CameraSetting");
 		ImGui::DragFloat3("cameraRotate", &cameraRotate.x, 0.01f);
