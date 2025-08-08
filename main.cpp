@@ -1004,6 +1004,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 		ImGui::End();
 
+
 		plane.normal = Normalize(plane.normal);
 
 		//球と平面の当たった時の色変更
